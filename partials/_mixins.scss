@@ -1,0 +1,127 @@
+@mixin lightlink($color:#ffffff, $hovercolor:$main-theme-color) {
+    text-decoration: none;
+    color: $color;
+    &:focus, &:hover {
+        color: darken($hovercolor, 25%);
+    }
+}
+
+@mixin darklink($color:#ffffff, $hovercolor:$main-theme-color) {
+    text-decoration: none;
+    color: $color;
+    &:focus, &:hover {
+        color: lighten($hovercolor, 25%);
+    }
+}
+
+@mixin logo($color:#ffffff, $font-size:20px) {
+    font-family: "Pe-icon-7-stroke";
+    color: $color;
+    font-size: $font-size;
+}
+
+@mixin highlighted($color:$main-theme-color) {
+    color: $color;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin width($width:50%) {
+    width: $width;
+    padding: 17px;
+}
+
+
+@mixin heading {
+     font-family: "Roboto-Black";
+     color: $text-color;
+     font-size: 48px;
+     text-transform: uppercase;
+     letter-spacing: -0.96px;
+     margin-bottom: 13px;
+     text-align: center;
+}
+
+@mixin subheading($height:10px, $background-color:$main-theme-color) {
+     width: 164px;
+     height: $height;
+     background-color: $background-color;
+     margin: 2px auto;
+}
+
+@mixin button__buy {
+    width: 255px;
+    height: 35px;
+    border: none;
+    font-family: "Roboto-Black";
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+    background-color: $button-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &:focus, &:hover {
+        background-color: $main-theme-color;
+    }
+    &--name {
+        padding: 0 13px;
+    }
+    &--price {
+        width: 55px;
+        background-color: rgba(255, 255, 255, .44);
+        text-align: center;
+        padding: 0 12px;
+    }
+}
+
+
+@mixin menu__button {
+    &--like, &--shuffle, &--clock, {
+        @include logo;
+        width: 50px;
+        height: 50px;
+        border: 1px solid;
+        background-color: transparent;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    &--add {
+        position: relative;
+        width: 166px;
+        height: 50px;
+        border: 1px solid #ffffff;
+        background-color: $button-color;
+        font-family: "OpenSans-Regular";
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: -0.28px;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 13px;
+        &:first-letter {
+            @include logo;
+            font-size: 30px;
+            line-height: 50px;
+        }
+    }
+    &--text {
+        position: absolute;
+        top: 18px;
+        right: 18px;   
+    }
+}
+
+@mixin menu_hover($background-color: $main-theme-color) {
+    &:focus, &:hover {
+        background-color: $background-color;
+    }
+}

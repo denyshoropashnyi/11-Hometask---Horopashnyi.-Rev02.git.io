@@ -1,0 +1,20 @@
+@import "partials/partials";
+@import "styles/1header";
+@import "styles/2slyder";
+@import "styles/3subslyder";
+@import "styles/4collection";
+@import "styles/5products";
+@import "styles/6ad";
+@import "styles/7sellers";
+@import "styles/8review";
+@import "styles/9newletter";
+@import "styles/10partner";
+@import "styles/11news";
+@import "styles/12footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}

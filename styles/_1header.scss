@@ -1,0 +1,215 @@
+.c-nav {
+    background-color: $main-theme-color;
+    &__contact {
+        @include lightlink;
+        font-size: 12px;
+        font-family: "OpenSans-Regular";
+        line-height: 43px;
+        padding-right: 20px;
+    }
+    &__icon {
+        @include logo(#fefefe, 25px);
+        letter-spacing: -.5px;
+        padding-left: 5px;
+        position: relative;
+        top: 7px;
+    }
+}
+
+.l-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.l-menu {
+    z-index: 1;
+    &__btn {
+        cursor: pointer;
+        span {
+            display: none;
+        }
+    }
+}
+
+.c-menu {
+    font-size: 16px;
+    font-family: "OpenSans-Regular";
+    font-weight: 300;
+    position: absolute;
+    left: 0;
+    background: $main-theme-color;
+    list-style-type: none;
+    display: none;
+    width: 100%;
+    z-index: 3;
+    &__item a {
+        @include lightlink;
+        padding-right: 5px;
+        line-height: 25px;
+    }
+    &__icon {
+        @include logo(#fefefe, 17px);
+        letter-spacing: -.34px;
+    }
+}
+
+#menu-toggler {
+    visibility: hidden;
+    position: absolute;
+    &:checked ~ .c-menu {
+        display: block;
+        text-align: end;
+    }
+}
+
+#menu-toggler:checked+.l-menu__btn .c-menu__btn--visible,
+#menu-toggler:not(:checked)+.l-menu__btn .c-menu__btn--hidden {
+    display: inline;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+.l-subnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0px 5px;
+    .l-subnav__company {
+        font-family: "Roboto-Regular";
+        font-size: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: -0.6px;
+        line-height: 91px;
+        a {
+            display: inline-block;
+            @include darklink($text-color);
+            &:first-letter {
+                @include highlighted;
+                font-family: "Roboto-Black";
+            }
+        }
+    }
+}
+
+.l-submenu {
+    &__btn {
+        cursor: pointer;
+        span {
+            display: none;
+        }
+    }   
+}
+
+.c-submenu {
+    font-size: 14px;
+    font-family: "OpenSans-ExtraBold";
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    background: lighten($color: $main-theme-color, $amount: 50%);
+    list-style-type: none;
+    display: none;
+    z-index: 2;
+    &__item a {
+        @include darklink ($nav-color);
+        line-height: 25px;
+        &:focus, &:hover {
+            color: $main-theme-color;
+        }
+    }
+}
+
+#submenu-toggler {
+    visibility: hidden;
+    position: absolute;
+    &:checked ~ .c-submenu {
+        display: block;
+        text-align: left;
+    }
+}
+
+#submenu-toggler:checked+.l-submenu__btn .c-submenu__btn--visible,
+#submenu-toggler:not(:checked)+.l-submenu__btn .c-submenu__btn--hidden {
+    display: inline;
+    font-size: 20px;
+    color: $main-theme-color;
+}
+
+.l-cart {
+    display: flex;
+    align-items: center;
+    .c-cart__button button{
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: "OpenSans-Regular";
+        letter-spacing: -0.36px;
+        margin-right: 5px;
+        &:first-letter {
+            font-family: "Pe-icon-7-stroke";
+            font-weight: 900; 
+        }
+    }
+}
+
+.c-cart__logo {
+    position: relative;
+    z-index: -1;
+    &--rectangle {
+        width: 20px;
+        height: 20px;
+        background-color: #ffffff;
+        border: 1px solid;
+        text-align: center;
+        .c-cart__logo--goods {
+            font-family: "OpenSans-SemiBold";
+            line-height: 18px;
+        }
+    }
+    &--ellipse {
+        width: 14px;
+        height: 7px;
+        border: 1px solid;
+        border-radius: 50% 50% 0 0;
+        position: absolute;
+        left: 3px;
+        top: -6px;
+    }
+}
+
+.c-cart__button button {
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+    .l-menu, .l-submenu {
+        &__btn {
+            display: none;
+        }
+    }
+    .c-menu {
+        display: flex;
+        position: relative;
+        &__item {
+            padding: 0 5px;
+            line-height: normal;
+        }
+    }
+    .c-submenu {
+        display: flex;
+        position: relative;
+        background: #ffffff;
+        &__item {
+            padding: 0 10px;
+            padding-right: 15px;
+        }
+    }
+}

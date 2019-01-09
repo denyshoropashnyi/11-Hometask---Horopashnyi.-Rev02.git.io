@@ -1,0 +1,67 @@
+.l-subslyder--wrapper {
+    width: 100%;
+    max-width: 1110px;
+    padding: 10px;
+}
+
+.c-subslyder {
+    color: $text-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    &__component {
+        @include flex-column;
+    }
+    &__icon {
+        @include logo($text-color,70px);
+        letter-spacing: -1.4px;
+        margin: 40px 0;
+        cursor: pointer;
+        &:hover {
+            color: $main-theme-color;
+        }
+    }
+    &__heading {
+        font-family: "OpenSans-SemiBold";
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: -0.36px;
+        line-height: 32px;
+        margin-bottom: 15px;
+        &:hover {
+            color: $main-theme-color;
+        }
+    }
+    &__text {
+        font-family: "OpenSans-Regular";
+        font-weight: 300;
+        letter-spacing: -0.28px;
+        line-height: 24px;
+        text-indent: 20px;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    .c-subslyder {
+        &__component {
+            @include flex-column;
+            @include width;
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .l-subslyder--wrapper {
+        margin: 35px auto;
+    }
+
+    .c-subslyder {
+        &__component {
+            @include flex-column;
+            width: calc(25% - 30px);
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.l-ad__component {
+    &--container {
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    &--img {
+        height: 401px;
+        width: 100%;
+        overflow: hidden;  
+    }
+    &--bg {
+        height: 401px;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.c-ad__component {
+    @include flex-column;
+    color: #fffefe;
+    position: absolute;
+    top: 171px;
+    margin: 0 10px;
+    &--heading {
+        font-family: "OpenSans-ExtraBold";
+        font-size: 30px;
+        letter-spacing: -1.2px;
+        text-transform: uppercase;
+    }
+    &--text {
+        font-family: "OpenSans-Regular";
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: -0.72px;
+    }
+}
+
+
+
+@media screen and (min-width:768px) {
+    .c-ad__component {
+        left: 70px;
+        &--heading {
+            font-size: 50px;
+        }
+        &--text {
+            font-size: 22px;
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .c-ad__component {
+        left: 160px;
+        &--heading {
+            font-size: 60px;
+        }
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .c-ad__component {
+        left: 462px;
+    }
+}

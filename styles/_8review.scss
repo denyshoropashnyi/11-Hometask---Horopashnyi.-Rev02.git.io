@@ -1,0 +1,114 @@
+.l-review {
+    &--wrapper {
+        padding: 85px 0;
+    }
+
+    &--container {
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+
+    &__component {
+        width: 255px;
+        cursor: pointer;
+        position: relative;  
+        margin: 25px auto;      
+    }
+}
+
+.l-review__heading {
+    margin-bottom: 80px;
+}
+
+.c-review__heading {
+    &--text {
+        @include heading;
+    }
+    &--hr {
+        @include subheading(8px);
+    }
+    &--line {
+        @include subheading(2px);
+    }
+}
+
+.c-feedback__customer--img {
+    width: 100%;
+}
+
+.l-feedback {
+    &__customer {
+        width: 222px;
+        height: 222px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        margin: 0 auto 32px;
+    }
+    &__quote {
+        max-width: 805px;
+        font-family: "OpenSans-Regular";
+        color: $headline-color;
+        font-weight: 300;
+        letter-spacing: -0.28px;
+        quotes: none;
+        text-indent: 20px;
+        text-align: center;
+        padding: 0 5px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.c-feedback__quote {
+    &--text {
+        margin-bottom: 28px;
+    }
+    &--who {
+        color: $highlighted;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.36px;
+        font-style: normal;
+    }
+    &--from {
+        font-size: 18px;
+        letter-spacing: -0.28px;
+        font-style: normal;
+        margin-bottom: 28px;
+    }
+}
+
+.c-feedback {
+    &__review {
+        text-align: center;
+        &--img {
+            width: 82px;
+            height: 82px;
+            border: 5px solid #030000;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            margin: 0 11px 32px;
+            cursor: pointer;
+        }
+    }
+}
+
+.c-feedback__review--img:hover {
+    border-color: $highlighted;
+    .l-feedback__customer {
+        border: 5px solid;
+    }
+}
+
+
+
+@media screen and (min-width:425px) {
+    .l-feedback__review {
+        display: flex;
+        justify-content: center;
+    }
+}

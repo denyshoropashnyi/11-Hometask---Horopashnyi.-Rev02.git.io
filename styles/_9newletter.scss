@@ -1,0 +1,85 @@
+.l-newsletter--wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.l-newsletter__component {
+    &--container {
+        position: relative;
+    }
+    &--img {
+        height: 462px;
+        overflow: hidden;
+        background-color: $bg-email;
+    }
+}
+
+.l-newsletter__heading {
+    margin-bottom: 30px;
+    margin-top: 125px;
+}
+
+.c-newsletter__heading {
+    &--text {
+        @include heading;
+    }
+    &--hr {
+        @include subheading(8px, #ffffff);
+    }
+    &--line {
+        @include subheading(2px, #ffffff);
+    }
+    &--ad {
+        font-family: "OpenSans-Regular";
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+        text-align: center;
+        margin-top: 29px;
+    }
+}
+
+.l-newsletter__email--container {
+    display: flex;
+    justify-content: center;
+    padding: 0 5px 30px;
+}
+
+.c-newsletter__email--placeholder {
+   width: 540px;
+   height: 60px;
+   padding-left: 30px;
+   border-radius: 3px;
+}
+.c-newsletter__email--submit {
+    width: 89px;
+    height: 60px;
+    background-color: $bg-email;
+    border: 1px solid #ffffff;
+    border-left: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: "Pe-icon-7-stroke";
+    font-size: 45px;
+    line-height: 26px;
+    letter-spacing: -16px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.h-newsletter {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.c-newsletter__email--submit {
+    &:focus, &:hover {
+        background-color: $bg-color;
+        color: $main-theme-color;
+    }   
+}

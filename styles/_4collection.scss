@@ -1,0 +1,106 @@
+.l-collection {
+    &--wrapper {
+        background-color: $bg-color;
+        padding: 85px 0;
+    }
+
+    &--container {
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+
+    &__component {
+        width: 255px;
+        cursor: pointer;
+        position: relative;  
+        margin: 25px auto;      
+    }
+}
+
+.l-collection__heading {
+    margin-bottom: 55px;
+}
+
+.c-collection__heading {
+    &--text {
+        @include heading;
+    }
+    &--hr {
+        @include subheading(8px);
+    }
+    &--line {
+        @include subheading(2px);
+    }
+}
+
+.l-collection__component--img {
+    position: relative;
+    height: 282px;
+    overflow: hidden;
+}
+
+.c-collection__component--bg {
+    position: absolute;
+    left: 0;
+    width: 255px;
+    height: 282px;
+    display: none;
+}
+
+.c-button__buy {
+    @include button__buy;
+}
+
+.c-menu__button {
+    @include menu__button;
+}
+
+.l-menu__button {
+    display: flex;
+    justify-content: center;
+}
+
+.l-menu__buttons {
+    @include flex-column;
+    width: 255px;
+    position: absolute;
+    top: 85px;
+}
+
+.c-menu__button--like, .c-menu__button--shuffle,
+.c-menu__button--clock, .c-menu__button--add {
+    @include menu_hover;
+    display: none;
+}
+
+.l-collection__component:hover {
+    .c-menu__button--like, .c-menu__button--shuffle,
+    .c-menu__button--clock, .c-menu__button--add {
+        display: block;       
+    }
+    .c-collection__component--bg {
+        display: block;
+        top: 0;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    .l-collection__component--wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .l-collection__component--container {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .l-collection__component--wrapper {
+        justify-content: space-between;
+    }
+    .l-collection__component--container {
+        width: 25%;
+    }
+}
